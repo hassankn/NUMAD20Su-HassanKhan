@@ -11,8 +11,14 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import java.sql.SQLOutput;
 
 public class MainActivity extends AppCompatActivity {
+
+    // initialize clicky text
+    private static String clickyPressedText = "Pressed: ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,5 +57,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static String getClickyPressedText() {
+        return clickyPressedText;
+    }
+
+    public static void setClickyPressedText(String textToSet) {
+        clickyPressedText = textToSet;
     }
 }

@@ -4,9 +4,20 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="clicky_fragment_label">Clicky Fragment</string>
     <string name="about_string">About</string>
     <string name="home_string">Home</string>
+    <string name="clicky_string">Clicky</string>
 
     <string name="hello_first_fragment">Home\n\n\nHello World!</string>
     <string name="hello_second_fragment">About\n\n\nHK\nhk@domain.com</string>
+
+    <!--  clicky button labels  -->
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="f">F</string>
+    <string name="pressed">Pressed:</string>
 </resources>
