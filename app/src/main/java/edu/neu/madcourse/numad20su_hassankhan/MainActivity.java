@@ -15,7 +15,9 @@ import android.widget.TextView;
 
 import java.sql.SQLOutput;
 
-public class MainActivity extends AppCompatActivity {
+import edu.neu.madcourse.numad20su_hassankhan.dummy.DummyContent;
+
+public class MainActivity extends AppCompatActivity implements LinkCollectorFragment.OnListFragmentInteractionListener {
 
     // initialize clicky text
     private static String clickyPressedText = "Pressed: ";
@@ -65,5 +67,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static void setClickyPressedText(String textToSet) {
         clickyPressedText = textToSet;
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }

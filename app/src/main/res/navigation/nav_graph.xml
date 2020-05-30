@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_ClickyFragment"
             app:destination="@id/ClickyFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_linkCollectorFragment"
+            app:destination="@id/linkCollectorFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -33,4 +36,9 @@
         android:name="edu.neu.madcourse.numad20su_hassankhan.ClickyFragment"
         android:label="@string/clicky_fragment_label"
         tools:layout="@layout/fragment_clicky"/>
+    <fragment
+        android:id="@+id/linkCollectorFragment"
+        android:name="edu.neu.madcourse.numad20su_hassankhan.LinkCollectorFragment"
+        android:label="fragment_link_collector_list"
+        tools:layout="@layout/fragment_link_collector_list" />
 </navigation>
