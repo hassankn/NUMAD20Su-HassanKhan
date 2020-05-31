@@ -1,26 +1,29 @@
 package edu.neu.madcourse.numad20su_hassankhan;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
-import java.sql.SQLOutput;
-
-import edu.neu.madcourse.numad20su_hassankhan.dummy.DummyContent;
+import edu.neu.madcourse.numad20su_hassankhan.nameAndLinkURL.NameAndLinkURLContent;
 
 public class MainActivity extends AppCompatActivity implements LinkCollectorFragment.OnListFragmentInteractionListener {
 
-    // initialize clicky text
+    // initialize text stores
     private static String clickyPressedText = "Pressed: ";
+    private String linkName_store = "";
+    private String linkURL_store = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +32,52 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // floating action button to add new links
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "More Features Coming Soon!", Snackbar.LENGTH_LONG)
+            public void onClick(final View view) {
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle("Input Name and Link URL");
+
+                // set up text input boxes
+                LinearLayout layout = new LinearLayout(MainActivity.this);
+                layout.setOrientation(LinearLayout.VERTICAL);
+
+                final EditText linkNameBox = new EditText(MainActivity.this);
+                linkNameBox.setHint("Link Name");
+                layout.addView(linkNameBox);
+
+                final EditText linkURLBox = new EditText(MainActivity.this);
+                linkURLBox.setHint("Link URL (start with 'https://')");
+                layout.addView(linkURLBox);
+
+                dialog.setView(layout);
+
+                // Set up buttons
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        linkName_store = linkNameBox.getText().toString();
+                        linkURL_store = linkURLBox.getText().toString();
+
+                        // add item to NameAndLinkURL content
+                        NameAndLinkURLContent
+                                .addItem(NameAndLinkURLContent.createNameAndLinkURLItem(linkName_store, linkURL_store));
+
+                        Snackbar.make(view, "Successfully Added New Link", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                    }
+                });
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                dialog.show();
             }
         });
     }
@@ -70,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(NameAndLinkURLContent.NameAndLinkURLItem item) {
 
     }
 }
