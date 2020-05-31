@@ -12,13 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import edu.neu.madcourse.numad20su_hassankhan.dummy.DummyContent;
-import edu.neu.madcourse.numad20su_hassankhan.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import edu.neu.madcourse.numad20su_hassankhan.nameAndLinkURL.NameAndLinkURLContent;
+import edu.neu.madcourse.numad20su_hassankhan.nameAndLinkURL.NameAndLinkURLContent.NameAndLinkURLItem;
 
 /**
- * A fragment representing a list of Items.
+ * A fragment representing a list of NameAndLinkURL items.
  * <p/>
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
@@ -71,7 +69,7 @@ public class LinkCollectorFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyLinkCollectorRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyLinkCollectorRecyclerViewAdapter(NameAndLinkURLContent.ITEMS, mListener));
         }
         return view;
     }
@@ -105,7 +103,6 @@ public class LinkCollectorFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(NameAndLinkURLItem item);
     }
 }
