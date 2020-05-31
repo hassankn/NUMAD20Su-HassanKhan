@@ -62,12 +62,17 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
                         linkName_store = linkNameBox.getText().toString();
                         linkURL_store = linkURLBox.getText().toString();
 
-                        // add item to NameAndLinkURL content
-                        NameAndLinkURLContent
-                                .addItem(NameAndLinkURLContent.createNameAndLinkURLItem(linkName_store, linkURL_store));
+                        // add item to NameAndLinkURL content, if not empty
+                        if (linkName_store.equals("") || linkURL_store.equals("")) {
+                            Snackbar.make(view, "Please don't leave any fields blank", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
+                        } else {
+                            NameAndLinkURLContent
+                                    .addItem(NameAndLinkURLContent.createNameAndLinkURLItem(linkName_store, linkURL_store));
 
-                        Snackbar.make(view, "Successfully Added New Link", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                            Snackbar.make(view, "Successfully Added New Link", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
+                        }
                     }
                 });
                 dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
