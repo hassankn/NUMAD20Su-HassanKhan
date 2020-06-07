@@ -20,6 +20,9 @@ public class ClickyFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+        // hide link collector floating action button
+        ((MainActivity) getActivity()).hideFloatingActionButton();
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_clicky, container, false);
     }

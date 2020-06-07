@@ -125,12 +125,16 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
 
 
     public void showFloatingActionButton() {
-        fab.show();
+        if (!(fab == null)) {
+            fab.show();
+        }
     }
 
 
     public void hideFloatingActionButton() {
-        fab.hide();
+        if (!(fab == null)) {
+            fab.hide();
+        }
     }
 
 

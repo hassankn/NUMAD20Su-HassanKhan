@@ -27,6 +27,9 @@ public class LocatorFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+        // hide link collector floating action button
+        ((MainActivity) getActivity()).hideFloatingActionButton();
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this.getActivity());
 
         // Inflate the layout for this fragment
