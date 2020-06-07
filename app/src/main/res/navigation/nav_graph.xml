@@ -18,8 +18,11 @@
             android:id="@+id/action_FirstFragment_to_ClickyFragment"
             app:destination="@id/ClickyFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_linkCollectorFragment"
-            app:destination="@id/linkCollectorFragment" />
+            android:id="@+id/action_FirstFragment_to_LinkCollectorFragment"
+            app:destination="@id/LinkCollectorFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_LocatorFragment"
+            app:destination="@id/LocatorFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -37,8 +40,13 @@
         android:label="@string/clicky_fragment_label"
         tools:layout="@layout/fragment_clicky"/>
     <fragment
-        android:id="@+id/linkCollectorFragment"
+        android:id="@+id/LinkCollectorFragment"
         android:name="edu.neu.madcourse.numad20su_hassankhan.LinkCollectorFragment"
-        android:label="fragment_link_collector_list"
+        android:label="@string/link_collector_fragment_label"
         tools:layout="@layout/fragment_link_collector_list" />
+    <fragment
+        android:id="@+id/LocatorFragment"
+        android:name="edu.neu.madcourse.numad20su_hassankhan.LocatorFragment"
+        android:label="@string/locator_fragment_label"
+        tools:layout="@layout/fragment_locator" />
 </navigation>
