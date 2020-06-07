@@ -50,6 +50,9 @@ public class LinkCollectorFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // show floating link collector button
+        ((MainActivity) getActivity()).showFloatingActionButton();
+
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
