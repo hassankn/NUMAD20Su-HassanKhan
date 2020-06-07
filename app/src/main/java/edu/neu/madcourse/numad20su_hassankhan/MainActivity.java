@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
     private static String clickyPressedText = "Pressed: ";
     private String linkName_store = "";
     private String linkURL_store = "";
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
         setSupportActionBar(toolbar);
 
         // floating action button to add new links
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
@@ -121,4 +122,17 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
     public void onListFragmentInteraction(NameAndLinkURLContent.NameAndLinkURLItem item) {
 
     }
+
+
+    public void showFloatingActionButton() {
+        fab.show();
+    }
+
+
+    public void hideFloatingActionButton() {
+        fab.hide();
+    }
+
+
 }
+
