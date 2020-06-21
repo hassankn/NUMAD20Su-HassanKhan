@@ -24,6 +24,8 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Scanner;
 
+import static edu.neu.madcourse.numad20su_hassankhan.MainActivity.*;
+
 public class WebServiceFragment extends Fragment {
 
     private EditText userInput;
@@ -46,12 +48,14 @@ public class WebServiceFragment extends Fragment {
 
         userInput = view.findViewById(R.id.userInputEditText);
         resultText = view.findViewById(R.id.response_textView);
+        resultText.setText(getZipCodePlaceResult());
 
         view.findViewById(R.id.button_fetch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // loading prompt
-                resultText.setText("Fetching...");
+                setZipCodePlaceResult("Fetching...");
+                resultText.setText(getZipCodePlaceResult());
                 // execute in a separate thread
                 runnableThread webServiceFetchThread = new runnableThread();
                 new Thread(webServiceFetchThread).start();
@@ -91,7 +95,8 @@ public class WebServiceFragment extends Fragment {
                 String resultPlace = places.getJSONObject(0).getString("place name");
 
                 // set result to the place's name
-                resultText.setText(resultPlace);
+                setZipCodePlaceResult(resultPlace);
+                resultText.setText(getZipCodePlaceResult());
 
 
             } catch (FileNotFoundException e) {
@@ -99,23 +104,28 @@ public class WebServiceFragment extends Fragment {
                 // was not entered
                 System.out.println("FileNotFoundException");
                 e.printStackTrace();
-                resultText.setText("Zip Code's place Not found, please enter a valid US Zip Code");
+                setZipCodePlaceResult("Zip Code's place Not found, please enter a valid US Zip Code");
+                resultText.setText(getZipCodePlaceResult());
             } catch (MalformedURLException e) {
                 System.out.println("MalformedURLException");
                 e.printStackTrace();
-                resultText.setText("Encountered an error");
+                setZipCodePlaceResult("Encountered an error while fetching");
+                resultText.setText(getZipCodePlaceResult());
             } catch (ProtocolException e) {
                 System.out.println("ProtocolException");
                 e.printStackTrace();
-                resultText.setText("Encountered an error");
+                setZipCodePlaceResult("Encountered an error while fetching");
+                resultText.setText(getZipCodePlaceResult());
             } catch (IOException e) {
                 System.out.println("IOException");
                 e.printStackTrace();
-                resultText.setText("Encountered an error");
+                setZipCodePlaceResult("Encountered an error while fetching");
+                resultText.setText(getZipCodePlaceResult());
             } catch (JSONException e) {
                 System.out.println("JSONException");
                 e.printStackTrace();
-                resultText.setText("Encountered an error");
+                setZipCodePlaceResult("Encountered an error while fetching");
+                resultText.setText(getZipCodePlaceResult());
             }
         }
     }

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
     private String linkName_store = "";
     private String linkURL_store = "";
     private FloatingActionButton fab;
+    private static String zipCodePlaceResult = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +117,14 @@ public class MainActivity extends AppCompatActivity implements LinkCollectorFrag
 
     public static void setClickyPressedText(String textToSet) {
         clickyPressedText = textToSet;
+    }
+
+    public static String getZipCodePlaceResult() {
+        return zipCodePlaceResult;
+    }
+
+    public static void setZipCodePlaceResult(String textToSet) {
+        zipCodePlaceResult = textToSet;
     }
 
     @Override
