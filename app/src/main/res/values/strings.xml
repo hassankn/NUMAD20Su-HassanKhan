@@ -7,11 +7,13 @@
     <string name="clicky_fragment_label">Clicky Fragment</string>
     <string name="link_collector_fragment_label">Link Collector Fragment</string>
     <string name="locator_fragment_label">Locator Fragment</string>
+    <string name="web_service_fragment_label">Web Service Fragment</string>
     <string name="about_string">About</string>
     <string name="home_string">Home</string>
     <string name="locator_string">Locator</string>
     <string name="link_collector_string">Link Collector</string>
     <string name="clicky_string">Clicky</string>
+    <string name="web_service_string">Web Service</string>
 
     <string name="hello_first_fragment">Home\n\n\nHello World!</string>
     <string name="hello_second_fragment">About\n\n\nHK\nhk@domain.com</string>
@@ -26,4 +28,7 @@
     <string name="e">E</string>
     <string name="f">F</string>
     <string name="pressed">Pressed:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

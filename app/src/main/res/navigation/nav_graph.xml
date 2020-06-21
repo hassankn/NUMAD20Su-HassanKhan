@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_LocatorFragment"
             app:destination="@id/LocatorFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_WebServiceFragment"
+            app:destination="@id/WebServiceFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -49,4 +52,9 @@
         android:name="edu.neu.madcourse.numad20su_hassankhan.LocatorFragment"
         android:label="@string/locator_fragment_label"
         tools:layout="@layout/fragment_locator" />
+    <fragment
+        android:id="@+id/WebServiceFragment"
+        android:name="edu.neu.madcourse.numad20su_hassankhan.WebServiceFragment"
+        android:label="@string/web_service_fragment_label"
+        tools:layout="@layout/fragment_web_service" />
 </navigation>
